@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            transition: 0.3s ease;
+        }
+
+        body.dark-mode {
+            background-color: #1e1e2f;
+            color: white;
+        }
+
+        .navbar-custom {
+            background-color: #0d6efd;
+            padding: 15px 32px;
+        }
+
+        body.dark-mode .navbar-custom {
+            background-color: #111122;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin-left: 20px;
+            transition: 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #ffde59 !important;
+        }
+
+        .container {
+            margin-top: 40px;
+        }
+
+        .card {
+            border-radius: 15px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        body.dark-mode .card {
+            background: #2b2b40;
+            color: white;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            color: white;
+            margin-left: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <a class="navbar-brand text-white" href="/">♻ Geri Dönüşüm</a>
+
+    <div class="ms-auto d-flex">
+        <a class="nav-link" href="/">Ana Sayfa</a>
+        <a class="nav-link" href="/add">Atık Ekle</a>
+        <a class="nav-link" href="/records">Kayıtlar</a>
+        <a class="nav-link" href="/stats">İstatistikler</a>
+        <a class="nav-link" href="/admin">Admin Paneli</a>
+        <a class="nav-link" href="/about">Hakkında</a>
+
+        <span class="toggle-btn" onclick="toggleMode()">🌙</span>
+    </div>
+</nav>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+<script>
+function toggleMode() {
+    document.body.classList.toggle("dark-mode");
+}
+</script>
+
+</body>
+</html>

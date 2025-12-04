@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <h3>Atık Kaydı Ekle</h3>
+
+    <form method="POST">
+        <label>İsim / Sınıf</label>
+        <input class="form-control" name="name" required>
+
+        <label class="mt-2">Tarih</label>
+        <input class="form-control" type="date" name="date" required>
+
+        <label class="mt-2">Kategori</label>
+        <select class="form-select" name="category" required>
+            <option>Plastik</option>
+            <option>Kağıt</option>
+            <option>Cam</option>
+            <option>Metal</option>
+            <option>Organik</option>
+        </select>
+
+        <label class="mt-2">Miktar (kg)</label>
+        <input class="form-control" type="number" name="amount" step="0.01" required>
+
+        <button class="btn btn-success mt-4">Kaydet</button>
+    </form>
+</div>
+
+{% endblock %}
